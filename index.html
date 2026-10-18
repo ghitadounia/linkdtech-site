@@ -382,20 +382,23 @@ input:focus,select:focus,textarea:focus{outline:2px solid #305af6;outline-offset
           <a href="mailto:linkd.tech2@gmail.com" style="color: #ffffff; font-size: 18px; font-weight: 500">linkd.tech2@gmail.com</a>
         </div>
       </div>
-      <form style="flex: 1 1 440px; min-width: 0; background: #ffffff; border-radius: 20px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; align-content: start">
-        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-nom" style="font-size: 13px; font-weight: 500">Nom</label><input id="f-nom" type="text" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
-        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-mail" style="font-size: 13px; font-weight: 500">Courriel</label><input id="f-mail" type="email" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
-        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-org" style="font-size: 13px; font-weight: 500">Entreprise ou organisme <span style="color: #808080; font-weight: 400">(facultatif)</span></label><input id="f-org" type="text" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
-        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-tel" style="font-size: 13px; font-weight: 500">Téléphone <span style="color: #808080; font-weight: 400">(facultatif)</span></label><input id="f-tel" type="tel" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
+      <form id="contact-form" action="https://formsubmit.co/linkd.tech2@gmail.com" method="POST" style="flex: 1 1 440px; min-width: 0; background: #ffffff; border-radius: 20px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; align-content: start">
+        <input type="hidden" name="_subject" value="Nouvelle demande — site Linkdtech">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-nom" style="font-size: 13px; font-weight: 500">Nom</label><input id="f-nom" name="Nom" type="text" required autocomplete="name" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-mail" style="font-size: 13px; font-weight: 500">Courriel</label><input id="f-mail" name="email" type="email" required autocomplete="email" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-org" style="font-size: 13px; font-weight: 500">Entreprise ou organisme <span style="color: #808080; font-weight: 400">(facultatif)</span></label><input id="f-org" name="Entreprise" type="text" autocomplete="organization" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-tel" style="font-size: 13px; font-weight: 500">Téléphone <span style="color: #808080; font-weight: 400">(facultatif)</span></label><input id="f-tel" name="Telephone" type="tel" autocomplete="tel" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f"></div>
         <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><label for="f-int" style="font-size: 13px; font-weight: 500">Ce qui vous intéresse</label>
-          <select id="f-int" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f">
+          <select id="f-int" name="Interet" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f">
             <option>Je ne sais pas encore</option><option>Site web, hébergement et marketing</option><option>Portail client et CRM</option><option>Automatisation et IA</option><option>Licences, infrastructure et cloud</option><option>Formation et workshops</option><option>Forfait Par projet</option><option>Forfait Suivi annuel</option><option>Forfait Partenaire</option>
           </select>
         </div>
-        <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><label for="f-msg" style="font-size: 13px; font-weight: 500">Votre projet en quelques lignes</label><textarea id="f-msg" rows="4" style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f; resize: vertical"></textarea></div>
+        <div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><label for="f-msg" style="font-size: 13px; font-weight: 500">Votre projet en quelques lignes</label><textarea id="f-msg" name="Message" rows="4" required style="border: 1px solid #dddddd; border-radius: 12.5px; padding: 12px 14px; background: #f5f5f4; color: #1c1d1f; resize: vertical"></textarea></div>
         <div style="grid-column: 1 / -1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-top: 4px">
-          <span style="font-size: 13px; color: #6a6b6c">Vos informations servent uniquement à vous répondre.</span>
-          <button type="button" style="background: #305af6; color: #ffffff; border: 0; border-radius: 100px; padding: 12px 22px; font-size: 15px; font-weight: 500; cursor: pointer">Envoyer ma demande</button>
+          <span id="contact-status" aria-live="polite" style="font-size: 13px; color: #6a6b6c; flex: 1 1 220px">Vos informations servent uniquement à vous répondre.</span>
+          <button type="submit" style="background: #305af6; color: #ffffff; border: 0; border-radius: 100px; padding: 12px 22px; font-size: 15px; font-weight: 500; cursor: pointer">Envoyer ma demande</button>
         </div>
       </form>
     </div>
@@ -408,10 +411,13 @@ input:focus,select:focus,textarea:focus{outline:2px solid #305af6;outline-offset
         <h2 style="margin: 0; font-size: 25px; font-weight: 500; letter-spacing: -0.03em; color: #000000">Recevez notre infolettre</h2>
         <p style="margin: 6px 0 0; color: #6a6b6c; font-size: 15px">Des conseils pratiques sur le web, l'IA et vos outils numériques, et les dates de nos prochains workshops. Sans pourriel.</p>
       </div>
-      <form style="flex: 1 1 360px; display: flex; flex-wrap: wrap; gap: 8px">
+      <form id="newsletter-form" action="https://formsubmit.co/linkd.tech2@gmail.com" method="POST" style="flex: 1 1 360px; display: flex; flex-wrap: wrap; gap: 8px">
+        <input type="hidden" name="_subject" value="Nouvel abonnement à l'infolettre — Linkdtech">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none">
         <label for="f-news" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Votre courriel</label>
-        <input id="f-news" type="email" placeholder="Votre courriel" style="flex: 1 1 200px; border: 1px solid #dddddd; border-radius: 100px; padding: 11px 18px; background: #ffffff; color: #1c1d1f">
-        <button type="button" style="background: #ffffff; color: #1c1d1f; border: 1px solid #1c1d1f; border-radius: 100px; padding: 10px 20px; font-weight: 500; cursor: pointer">M'abonner</button>
+        <input id="f-news" name="email" type="email" required autocomplete="email" placeholder="Votre courriel" style="flex: 1 1 200px; border: 1px solid #dddddd; border-radius: 100px; padding: 11px 18px; background: #ffffff; color: #1c1d1f">
+        <button type="submit" style="background: #ffffff; color: #1c1d1f; border: 1px solid #1c1d1f; border-radius: 100px; padding: 10px 20px; font-weight: 500; cursor: pointer">M'abonner</button>
+        <span id="news-status" aria-live="polite" style="flex-basis: 100%; font-size: 13px; color: #6a6b6c"></span>
       </form>
     </div>
     <footer style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 28px 0 24px">
@@ -435,5 +441,48 @@ input:focus,select:focus,textarea:focus{outline:2px solid #305af6;outline-offset
   </nav>
 
 </div>
+<script>
+(function () {
+  var ENDPOINT = 'https://formsubmit.co/ajax/linkd.tech2@gmail.com';
+  function wire(form, status, okMsg) {
+    if (!form || !status) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form.elements._honey && form.elements._honey.value) return;
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Envoi…'; btn.style.opacity = '0.7';
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      fetch(ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) {
+          return r.json().catch(function () { return {}; }).then(function (j) {
+            if (!r.ok || j.success === false || j.success === 'false') throw new Error(j.message || 'Erreur');
+          });
+        })
+        .then(function () {
+          form.reset();
+          status.textContent = okMsg;
+          status.style.color = '#1a7f37';
+        })
+        .catch(function () {
+          status.innerHTML = 'Oups, l\u2019envoi n\u2019a pas fonctionné. Écrivez-nous à <a href="mailto:linkd.tech2@gmail.com">linkd.tech2@gmail.com</a>.';
+          status.style.color = '#b42318';
+        })
+        .finally(function () {
+          btn.disabled = false; btn.textContent = label; btn.style.opacity = '';
+        });
+    });
+  }
+  wire(document.getElementById('contact-form'), document.getElementById('contact-status'),
+    'Merci! Votre demande est bien envoyée — on vous répond rapidement.');
+  wire(document.getElementById('newsletter-form'), document.getElementById('news-status'),
+    'Merci! Votre inscription à l\u2019infolettre est confirmée.');
+})();
+</script>
 </body>
 </html>
